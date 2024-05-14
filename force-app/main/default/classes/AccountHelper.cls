@@ -70,14 +70,14 @@ public with sharing class AccountHelper{
 
     public static void defaultContact(List<Account> newAccounts){
         List<Contact> contacts = new List<Contact>();   
-        for(Account acc : (List<Account>)Trigger.new){
+        for(Account acc : newAccounts){
             Contact con = new Contact();
             con.LastName = 'DefaultContact';
             con.Email = 'default@email.com';
             con.AccountId = acc.Id;
             contacts.add(con);
         }
-        Database.insert(contacts, accessLevel.USER_MODE); 
+        insert contacts;
     }
        
 }
