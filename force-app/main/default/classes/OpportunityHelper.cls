@@ -121,6 +121,6 @@ public with sharing class OpportunityHelper {
                 oppMap.put(opp.Id, oppToUpdate);
             }
         }
-        Database.update(oppMap.values(), accessLevel.USER_MODE);
+        update oppMap.values();
     }        
 }
